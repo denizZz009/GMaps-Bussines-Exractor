@@ -12,3 +12,7 @@ Collecting Business Informations using Google Maps
 ## IMPORTANT
 - Make sure you have Microsoft Excel
 - App collects this informations; adress,telephone,comment count,website...
+
+## PHOTOS
+![App Screenshot](https://github.com/denizZz009/GMaps-Bussines-Exractor/blob/main/Screenshot%202024-11-29%20204704.png)
+![App Screenshot](https://github.com/denizZz009/GMaps-Bussines-Exractor/blob/main/Screenshot%202024-11-29%20194252.png)

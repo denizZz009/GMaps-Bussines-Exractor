@@ -6,6 +6,7 @@ import argparse
 l1 = []
 l2 = []
 
+# Değişkenler için başlangıç değerleri
 Name = ""
 Address = ""
 Website = ""
@@ -46,8 +47,8 @@ def main():
         browser = p.chromium.launch(executable_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe', headless=False)
         page = browser.new_page()
 
-        page.goto("https://www.google.com/maps/@32.9817464,70.1930781,3.67z?", timeout=60000)
-        page.wait_for_timeout(1000)
+        page.goto("https://www.google.com/maps/@32.9817464,70.1930781,3.67z?", timeout=46360000)
+        page.wait_for_timeout(2100)
 
         page.locator('//input[@id="searchboxinput"]').fill(search_for)
         page.keyboard.press("Enter")
@@ -57,8 +58,8 @@ def main():
 
         previously_counted = 0
         while True:
-            page.mouse.wheel(0, 10000)
-            page.wait_for_timeout(2000)  # Timeout ayarı sayfanın tam olarak yüklenmesi için
+            page.mouse.wheel(0, 46360000)
+            page.wait_for_timeout(1400)  # Timeout ayarı sayfanın tam olarak yüklenmesi için
 
             if (page.locator('//a[contains(@href, "https://www.google.com/maps/place")]').count() >= total):
                 listings = page.locator('//a[contains(@href, "https://www.google.com/maps/place")]').all()[:total]
@@ -107,7 +108,7 @@ def main():
             # Yorum Sayısı
             if page.locator(reviews_count_xpath).count() > 0:
                 temp = page.locator(reviews_count_xpath).inner_text()
-                temp = temp.replace('(', '').replace(')', '').replace(',', '')
+                temp = temp.replace('(', '').replace(')', '').replace(',', '').replace('.', '')
                 Reviews_Count = int(temp)
                 reviews_c_list.append(Reviews_Count)
             else:
@@ -175,7 +176,7 @@ def main():
                 df.drop(column, axis=1, inplace=True)
         
         # UTF-8 kodlamasıyla CSV dosyasına kaydet
-        df.to_csv(r'result.csv', index=False, encoding='utf-8-sig')  
+        df.to_csv(r'logs.csv', index=False, encoding='utf-8-sig')  
         browser.close()
         print(df.head())
 

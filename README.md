@@ -6,3 +6,4 @@ Collecting Business Informations using Google Maps
 -  Then use `python main.py` command for opening app.
 -  Write search term.
 -  Indicate the amount of information you are in need of.
+-  Check logs.csv file for scrapped informations

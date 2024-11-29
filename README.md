@@ -7,3 +7,8 @@ Collecting Business Informations using Google Maps
 -  Write search term.
 -  Indicate the amount of information you are in need of.
 -  Check logs.csv file for scrapped informations
+
+
+## IMPORTANT
+- Make sure you have Microsoft Excel
+- App collects this informations; adress,telephone,comment count,website...
